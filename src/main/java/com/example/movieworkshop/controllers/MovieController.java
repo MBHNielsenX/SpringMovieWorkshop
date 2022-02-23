@@ -11,23 +11,28 @@ import java.util.ArrayList;
 public class MovieController {
 
     @GetMapping("/")
-    public static String index () {
+    public static String index() {
         return "<h1> Welcome to my movie sorting website </h1>";
     }
 
     @GetMapping("/getFirst")
-    public static String first () {
+    public static String first() {
         return "The title of the first movie is: " + MovieService.getFirstTitle() ;
     }
 
     @GetMapping("/getRandom")
-    public static String rand () {
+    public static String rand() {
         return "Here is a random movie title: " + MovieService.getRandomTitle();
     }
 
     @GetMapping("/getTenSortByPopularity")
-    public String ten () {
+    public String ten() {
         return "Here are the ten movies sorted by popularity: " + "\n" + MovieService.getTenSortByPopularity();
+    }
+
+    @GetMapping("howManyWonAward")
+    public String award() {
+        return "There are " + MovieService.howManyWonAwards() + " movies that have gotten an award";
     }
 
 

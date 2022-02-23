@@ -12,13 +12,10 @@ public class MovieService {
     static Random rd = new Random();
 
     public static String getFirstTitle() {
-
         return listOfMovies.get(0).getTitle();
     }
 
     public static String getRandomTitle() {
-
-
         return listOfMovies.get(rd.nextInt(listOfMovies.size() + 1)).getTitle();
     }
 
@@ -36,6 +33,17 @@ public class MovieService {
         }
 
         return sortedOutput;
+    }
+
+    public static int howManyWonAwards() {
+        int awardCounter = 0;
+
+        for (int i = 0; i < listOfMovies.size(); i++) {
+            if (listOfMovies.get(i).hasWonAward()) {
+                awardCounter++;
+            }
+        }
+        return awardCounter;
     }
 
 

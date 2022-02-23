@@ -63,7 +63,7 @@ public class Movie implements Comparable<Movie>{
         this.popularity = popularity;
     }
 
-    public boolean isHasWonAward() {
+    public boolean hasWonAward() {
         return hasWonAward;
     }
 
@@ -75,7 +75,11 @@ public class Movie implements Comparable<Movie>{
     @Override
     public int compareTo(Movie compareMov) {
         int comparePopularity = ((Movie)compareMov).getPopularity();
+        //  For Ascending order
         return this.popularity - comparePopularity;
+
+        // For Descending order do like this
+        // return compareage-this.studentage;
     }
 
     @Override
