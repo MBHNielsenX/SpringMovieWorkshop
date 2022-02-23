@@ -25,5 +25,10 @@ public class MovieController {
         return "Here is a random movie title: " + MovieService.getRandomTitle();
     }
 
+    @GetMapping("/getTenSortByPopularity")
+    public String ten () {
+        return "Here are the ten movies sorted by popularity: " + "\n" + MovieService.getTenSortByPopularity();
+    }
+
 
 }

@@ -1,6 +1,7 @@
 package com.example.movieworkshop.model;
+import java.util.*;
 
-public class Movie {
+public class Movie implements Comparable<Movie>{
     private int year;
     private int length;
     private String title;
@@ -68,5 +69,20 @@ public class Movie {
 
     public void setHasWonAward(boolean hasWonAward) {
         this.hasWonAward = hasWonAward;
+    }
+
+
+    @Override
+    public int compareTo(Movie compareMov) {
+        int comparePopularity = ((Movie)compareMov).getPopularity();
+        return this.popularity - comparePopularity;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", popularity=" + popularity +
+                '}';
     }
 }
